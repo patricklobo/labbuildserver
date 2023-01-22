@@ -30,6 +30,8 @@ const init = async () =>{
         let disco = _devs[response.dev - 1];
         if(disco){
             console.log("Disco selecionado: ", disco);
+        } else {
+            console.log("Disco selecionado inválido!");
         }
         // console.log(response)
         // console.log(_devs);
