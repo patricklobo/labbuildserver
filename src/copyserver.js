@@ -44,7 +44,9 @@ const init = async () => {
                 initial: true,
             });
             if (response.value) {
-                console.log("SAL", disco);
+                console.clear();
+                console.log();
+                console.log("Esse procedimento pode demorar, por favor aguarde...");
             }
         } else {
             console.log("Disco selecionado inválido!");
