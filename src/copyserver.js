@@ -8,22 +8,16 @@ const init = async () =>{
         const questions = [
             {
               type: 'text',
-              name: 'username',
-              message: 'What is your GitHub username?'
+              name: 'dish',
+              message: 'Do you like pizza?'
             },
             {
-              type: 'number',
-              name: 'age',
-              message: 'How old are you?'
-            },
-            {
-              type: 'text',
-              name: 'about',
-              message: 'Tell something about yourself',
-              initial: 'Why should I?'
+              type: prev => prev == 'pizza' ? 'text' : null,
+              name: 'topping',
+              message: 'Name a topping'
             }
           ];
-          
+
         let resp = await UTIL.cmd("sudo fdisk -l | grep \"Disk /dev/sd\"");
         let list = resp.split("\n").filter( i => i);
         let devs = list.map( i => {
