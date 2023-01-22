@@ -29,6 +29,7 @@ const init = async () =>{
         console.log("LISTA DE DISCOS");
         console.log();
         console.log(devs.join("\n"));
+        console.log();
         const response = await prompts(questions);
         let disco = _devs[response.dev - 1];
         if(disco){
