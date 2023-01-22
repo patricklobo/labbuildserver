@@ -47,6 +47,10 @@ const init = async () => {
                 console.clear();
                 console.log();
                 console.log("Esse procedimento pode demorar, por favor aguarde...");
+                let resp = await UTIL.cmd(`sudo gzip -cd < ./labbase.img.gz | dd of=${disco} bs=32M`);
+                console.clear();
+                console.log();
+                console.log("Finalizado! Remova o pendrive e reinicie o computador.");
             }
         } else {
             console.log("Disco selecionado inválido!");
@@ -54,7 +58,7 @@ const init = async () => {
         // console.log(response)
         // console.log(_devs);
     } catch (error) {
-        console.log("erro", error);
+        console.log("Ocorreu um erro", error);
     }
 };
 
