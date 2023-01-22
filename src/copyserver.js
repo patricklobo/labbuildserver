@@ -8,7 +8,7 @@ const init = async () =>{
         let list = resp.split("\n").filter( i => i);
         let devs = list.map( i => {
             let _devs = i.split(" ");
-            let dev = `${_devs[2]} ${_devs[3]} -> ${1}`;
+            let dev = `${_devs[2]} ${_devs[3]} -> ${_devs[1]}`;
             return dev;
         })
         console.log(devs);
