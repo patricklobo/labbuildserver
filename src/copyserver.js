@@ -9,7 +9,7 @@ const init = async () =>{
             {
               type: 'number',
               name: 'dev',
-              message: 'Qual disco deseja instalar?'
+              message: 'Selecione o número do disco deseja instalar:'
             },
           ];
           
@@ -24,6 +24,7 @@ const init = async () =>{
             let dev = `[${(index + 1)}] -> ${_devs[2]} ${_devs[3]} -> ${_devs[1]}`;
             return dev;
         })
+        console.log("LISTA DE DISCOS");
         console.log(devs.join("\n"));
         const response = await prompts(questions);
         console.log(response)
