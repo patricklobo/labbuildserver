@@ -44,7 +44,7 @@ const init = async () => {
                 initial: true,
             });
             if (response.value) {
-                console.log("SAL");
+                console.log("SAL", disco);
             }
         } else {
             console.log("Disco selecionado inválido!");
