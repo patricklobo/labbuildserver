@@ -47,7 +47,11 @@ const init = async () => {
                 console.clear();
                 console.log();
                 console.log("Esse procedimento pode demorar, por favor aguarde...");
-                let resp = await UTIL.cmd(`sudo gzip -cd < ./labbase.img.gz | dd of=${disco} bs=32M`);
+                try {
+                    let resp = await UTIL.cmd(`sudo gzip -cd < ./labbase.img.gz | dd of=${disco} bs=32M`);
+                } catch (error) {
+                    
+                }
                 console.clear();
                 console.log();
                 console.log("Finalizado! Remova o pendrive e reinicie o computador.");
