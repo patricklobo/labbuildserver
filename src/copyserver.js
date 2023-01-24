@@ -50,7 +50,7 @@ const init = async () => {
                 try {
                     let resp = await UTIL.cmd(`sudo gzip -cd < ./labbase.img.gz | dd of=${disco} bs=32M`);
                 } catch (error) {
-                    
+                    console.log(error);
                 }
                 console.clear();
                 console.log();
