@@ -11,7 +11,12 @@ const init = async () => {
             },
         ];
 
-        let resp = await UTIL.cmd('sudo fdisk -l | grep "Disk /dev/sd"');
+        let resp = null;
+        try {
+            resp = await UTIL.cmd('sudo fdisk -l | grep "Disk /dev/sd"');
+        } catch (error) {
+            resp = error;
+        }
         let list = resp.split("\n").filter((i) => i);
         let _devs = list.map((i, index) => {
             let _devs = i.split(" ");
