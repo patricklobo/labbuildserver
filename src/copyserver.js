@@ -59,10 +59,21 @@ const init = async () => {
                 }
                 console.clear();
                 console.log();
-                console.log("Finalizado! Remova o pendrive e reinicie o computador.");
+                const response = await prompts({
+                    type: "confirm",
+                    name: "value",
+                    message: "Procedimento finalizado! Remova o pendrive e reinicie a servidor.",
+                    initial: true,
+                });
             }
         } else {
-            console.log("Disco selecionado inválido!");
+            const response = await prompts({
+                type: "confirm",
+                name: "value",
+                message: "Disco selecionado invalido.",
+                initial: true,
+            });
+            init();
         }
         // console.log(response)
         // console.log(_devs);
